@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sonrisa Imperial</title>
+<meta name="description" content="Clínica dental Sonrisa Imperial. Reserva tu cita en menos de dos minutos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#" aria-label="Sonrisa Imperial, inicio">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 12 L10 6 L13 10 L16 4 L19 10 L22 6 L26 12" />
+        <path d="M7 14 C7 13 8 12.5 9.5 12.5 C11.5 12.5 13 14 16 14 C19 14 20.5 12.5 22.5 12.5 C24 12.5 25 13 25 14 C25 18 24 21 23 24.5 C22.4 26.7 21 28 20 28 C18.6 28 18.3 25.5 17.6 23 C17.2 21.6 16.6 21 16 21 C15.4 21 14.8 21.6 14.4 23 C13.7 25.5 13.4 28 12 28 C11 28 9.6 26.7 9 24.5 C8 21 7 18 7 14 Z" />
+      </svg>
+      <span>Sonrisa Imperial</span>
+    </a>
+    <a class="phone" href="tel:+34910000000">910 000 000</a>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <div>
+      <p class="eyebrow">Clínica dental</p>
+      <h1>Reserva tu cita en menos de dos minutos.</h1>
+      <p class="lead">Elige el motivo, el día y la hora que mejor te vengan. Te confirmamos la cita por teléfono el mismo día.</p>
+      <a class="btn jump" href="#reserva">Reservar cita</a>
+      <ul class="facts">
+        <li><span class="k">Primera visita</span><span class="v">Valoración y diagnóstico</span></li>
+        <li><span class="k">Lunes a viernes</span><span class="v">9:00 – 20:00</span></li>
+        <li><span class="k">Sábados</span><span class="v">10:00 – 14:00</span></li>
+        <li><span class="k">Urgencias</span><span class="v">Atendidas en el día</span></li>
+      </ul>
+    </div>
+
+    <div class="card" id="reserva">
+      <form id="booking" novalidate>
+        <h2>Pide tu cita</h2>
+        <p class="sub">Sin compromiso. Solo necesitamos tus datos de contacto.</p>
+
+        <fieldset>
+          <label class="lbl" for="motivo">Motivo de la visita</label>
+          <select id="motivo" name="motivo">
+            <option>Revisión y limpieza</option>
+            <option>Primera valoración</option>
+            <option>Ortodoncia e invisible</option>
+            <option>Blanqueamiento</option>
+            <option>Implantes</option>
+            <option>Urgencia o dolor</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Día</legend>
+          <div class="chips" id="days"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Hora</legend>
+          <div id="slots"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Tus datos</legend>
+          <div style="display:grid; gap:12px;">
+            <div class="field">
+              <label for="nombre">Nombre y apellidos</label>
+              <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+            </div>
+            <div class="row2">
+              <div class="field">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" autocomplete="tel" inputmode="tel" required>
+              </div>
+              <div class="field">
+                <label for="email">Email (opcional)</label>
+                <input type="email" id="email" name="email" autocomplete="email">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <label class="consent" for="acepto">
+          <input type="checkbox" id="acepto" name="acepto">
+          <span>Acepto que Sonrisa Imperial use mis datos para gestionar esta cita, según su política de privacidad.</span>
+        </label>
+
+        <p class="error" id="err" hidden></p>
+        <button class="btn" type="submit">Reservar cita</button>
+        <p class="fine">Te llamaremos para confirmar. Puedes cambiar o anular la cita sin coste.</p>
+      </form>
+
+      <div class="done" id="done" hidden>
+        <div class="tick" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 L10 17.5 L19 7.5"/></svg>
+        </div>
+        <h2>Solicitud recibida</h2>
+        <p class="sub" style="margin-bottom:0">Te llamaremos en las próximas horas para confirmar tu cita.</p>
+        <dl id="summary"></dl>
+        <button class="linkbtn" type="button" id="again">Pedir otra cita</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps">
+    <div class="wrap">
+      <h2>Cómo funciona</h2>
+      <ol>
+        <li><h3>Eliges día y hora</h3><p>Reservas desde aquí, a cualquier hora, sin esperar al teléfono.</p></li>
+        <li><h3>Te confirmamos</h3><p>Te llamamos el mismo día para confirmar la cita y resolver cualquier duda.</p></li>
+        <li><h3>Vienes a la clínica</h3><p>En la primera visita revisamos tu boca y te explicamos el plan y el presupuesto por escrito.</p></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#" aria-label="Sonrisa Imperial">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true" style="width:24px;height:24px">
+            <path d="M6 12 L10 6 L13 10 L16 4 L19 10 L22 6 L26 12" />
+            <path d="M7 14 C7 13 8 12.5 9.5 12.5 C11.5 12.5 13 14 16 14 C19 14 20.5 12.5 22.5 12.5 C24 12.5 25 13 25 14 C25 18 24 21 23 24.5 C22.4 26.7 21 28 20 28 C18.6 28 18.3 25.5 17.6 23 C17.2 21.6 16.6 21 16 21 C15.4 21 14.8 21.6 14.4 23 C13.7 25.5 13.4 28 12 28 C11 28 9.6 26.7 9 24.5 C8 21 7 18 7 14 Z" />
+          </svg>
+          <span>Sonrisa Imperial</span>
+        </a>
+      </div>
+      <div>
+        <h4>Dirección</h4>
+        <p>Calle Mayor, 1<br>28013 Madrid</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>910 000 000<br>citas@sonrisaimperial.es</p>
+      </div>
+    </div>
+    <p class="legal">© <span id="year">2026</span> Sonrisa Imperial · Nº de registro sanitario: pendiente · Aviso legal · Privacidad</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
